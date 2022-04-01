@@ -459,19 +459,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dariu\\OneDrive\\Desktop\\training_sessions\\project1\\CatShelter\\CatShelter.csproj",
+      "projectUniqueName": "C:\\Users\\dariu\\Desktop\\training_sessions\\project1\\CatShelter\\CatShelter.csproj",
       "projectName": "CatShelter",
-      "projectPath": "C:\\Users\\dariu\\OneDrive\\Desktop\\training_sessions\\project1\\CatShelter\\CatShelter.csproj",
+      "projectPath": "C:\\Users\\dariu\\Desktop\\training_sessions\\project1\\CatShelter\\CatShelter.csproj",
       "packagesPath": "C:\\Users\\dariu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dariu\\OneDrive\\Desktop\\training_sessions\\project1\\CatShelter\\obj\\",
+      "outputPath": "C:\\Users\\dariu\\Desktop\\training_sessions\\project1\\CatShelter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dariu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\dariu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -505,12 +507,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.15, 5.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

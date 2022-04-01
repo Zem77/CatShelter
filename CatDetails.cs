@@ -13,9 +13,9 @@ namespace CatShelter {
 
             public string cColor { get; set; }
 
-            public int cAge { get; set; }
+            public string cAge { get; set; }
 
-            public int cWeight { get; set; }
+            public string cWeight { get; set; }
 
             public string cGender { get; set; }
 
@@ -24,14 +24,13 @@ namespace CatShelter {
 
         #endregion
 
-        SqlConnection con = new SqlConnection(@"server=LAPTOP-LS52TP6C\TRAINEDINSTANCE;database=catDB;integrated security=true;") ;
+        SqlConnection con = new SqlConnection(@"server=LAPTOP-LS52TP6C\TRAINERSINSTANCE;database=catDB;integrated security=true; User ID=sa; Password=Electricity8*;") ;
 
-        //#region Cat Functions
+        #region Cat Functions
 
         public string addNewEntry(CatDetails newCat) {
 
-            SqlCommand cmd_addCatEntry = new SqlCommand("insert into CatDetails values(@cName,@cColor,@cAge,@cWeight,@cGender,@cHeight)", con) ;
-            //cmd_addCatEntry.Parameters.AddWithValue("@cId", newCat.cId) ;
+            SqlCommand cmd_addCatEntry = new SqlCommand("insert into CatDetails values (@cName, @cColor, @cAge, @cWeight, @cGender, @cHeight)", con) ;
             cmd_addCatEntry.Parameters.AddWithValue("@cName", newCat.cName) ;
             cmd_addCatEntry.Parameters.AddWithValue("@cColor", newCat.cColor) ;
             cmd_addCatEntry.Parameters.AddWithValue("@cAge", newCat.cAge) ;
@@ -90,22 +89,19 @@ namespace CatShelter {
 
 
         public CatDetails getCatEntryById(int id) {
-            CatDetails cd = null ;
-            SqlCommand cmd_search = new SqlCommand("select * from catdetails where cId = @cId", con) ;
+            CatDetails cd = new CatDetails() ;
+            SqlCommand cmd_search = new SqlCommand("select * from CatDetails where cId = @cId", con) ;
             cmd_search.Parameters.AddWithValue("@cId", id) ;
             SqlDataReader _read ;
             try {
                 con.Open() ;
                 _read = cmd_search.ExecuteReader() ;
-
-                _read.Read() ;
-                
-                if(_read.Read()) {
+                while(_read.Read()) {
                     cd.cId = id ;
                     cd.cName = Convert.ToString(_read[1]) ;
                     cd.cColor = Convert.ToString(_read[2]) ;
-                    cd.cAge = Convert.ToInt32(_read[3]) ;
-                    cd.cWeight = Convert.ToInt32(_read[4]) ;
+                    cd.cAge = Convert.ToString(_read[3]) ;
+                    cd.cWeight = Convert.ToString(_read[4]) ;
                     cd.cGender = Convert.ToString(_read[5]) ;
                     cd.cHeight = Convert.ToString(_read[6]) ;
 
@@ -122,9 +118,8 @@ namespace CatShelter {
 
 
 
-        //#endregion
+        #endregion
 
-        //outside region
 
     }
 
