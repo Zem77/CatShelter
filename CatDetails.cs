@@ -24,7 +24,7 @@ namespace CatShelter {
 
         #endregion
 
-        SqlConnection con = new SqlConnection(@"server=LAPTOP-LS52TP6C\TRAINERSINSTANCE;database=catDB;integrated security=true; User ID=sa; Password=Electricity8*;") ;
+        SqlConnection con = new SqlConnection(@"server=LAPTOP-LS52TP6C\TRAINERSINSTANCE;database=catDB;integrated security=true; User ID=sa; Password=;") ;
 
         #region Cat Functions
 
