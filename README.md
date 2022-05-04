@@ -21,7 +21,7 @@ To-do list:
 -I can also create a web api to impliment a software oriented architectural design pattern
 
 Getting Started:
-git clone  
+git clone https://github.com/Zem77/CatShelter.git
 Clone the code from this repository to your local repository using the command above in 
 your console(the command will work with the Unix or Windows interface). Open Visual Studio 
 code. Open a this folder entitled CatShelter. Open a terminal and type dotnet run. 
